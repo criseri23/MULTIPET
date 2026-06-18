@@ -1,27 +1,21 @@
-﻿using System;
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
 
-
-namespace MultiPet
+class Program
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Perro perro1 = new Perro();
-            perro1.Nombre = "Rocky";
+ static void Main(string[] args)
+ {
+  List<Mascota> pacientes = new List<Mascota>();
 
-            Gato gato1 = new Gato();
-            gato1.Nombre = "Mishi";
+ pacientes.Add(new Perro { Nombre = "Rex", EsEntrenado = true });
+ pacientes.Add(new Gato { Nombre = "Michi" });
 
-            Console.WriteLine("=== SISTEMA VETERINARIA MULTIPET ===");
+ Console.WriteLine("---- Turnos del Día ----");
 
-            Console.WriteLine("\nMascota: " + perro1.Nombre);
-            perro1.HacerSonido();
+ foreach (var paciente in pacientes)
+{
+paciente.RealizarExamen();
+}
 
-            Console.WriteLine("\nMascota: " + gato1.Nombre);
-            gato1.HacerSonido();
-
-            Console.ReadKey();
-        }
-    }
+ Console.ReadLine();
+ }
 }
