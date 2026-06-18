@@ -1,20 +1,25 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace MultiPet
+namespace ConsoleApp9
 {
-    public class Mascota
+ public class Mascota
     {
-        private string nombre;
+ private string _nombre;
 
-        public string Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
+ public string Nombre
+   {
+  get { return _nombre; }
+ set { _nombre = value; }
+}
 
-        public virtual void HacerSonido()
-        {
-            Console.WriteLine("La mascota hace un sonido.");
-        }
-    }
+   public virtual void RealizarExamen()
+   {
+    Console.WriteLine($"Realizando chequeo general a {Nombre}...");
+     }
+ }
+}
 }
